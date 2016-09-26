@@ -1,0 +1,1930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>users_test</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>160510315945779849</string>
+			<key>name</key>
+			<string>webdev</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJX
+			TlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAF
+			gAdUdHlwZVRyb3dzXxAdU2VsZWN0aW9uRGV0YWlsVHlwZU5TSW5k
+			ZXhTZXTSFwsYGVxOU1JhbmdlQ291bnQQAIAG0hscHR5aJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1pOU0luZGV4U2V0oh8gWk5TSW5kZXhTZXRY
+			TlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVk
+			QXJjaGl2ZXLRJidUZGF0YYABAAgAEQAaACMALQAyADcAQABGAE0A
+			VQBgAGcAagBsAG4AcQBzAHUAdwB8AIEAoQCmALMAtQC3ALwAxwDQ
+			ANsA3gDpAPIA9wEEAQcBGQEcASEAAAAAAAACAQAAAAAAAAAoAAAA
+			AAAAAAAAAAAAAAABIw==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1080, 559}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+/* SELECT * FROM customers AS t1
+    LEFT JOIN orders AS t2 ON t1.customerNumber = t2.customerNumber
+    LEFT JOIN orderdetails AS t3 ON t2.orderNumber = t3.orderNumber; */</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers AS t1
+    LEFT JOIN orders AS t2 ON t1.customerNumber = t2.customerNumber
+    LEFT JOIN orderdetails AS t3 ON t2.orderNumber = t3.orderNumber</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+/* SELECT customerNumber, orderNumber FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.orders = orders.orders */</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+/* SELECT customerNumber, orderNumber FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.orders = orders.orders */</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+/* SELECT customerNumber, orderNumber FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.orders = orders.orders */</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT customerNumber, orderNumber FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.orders = orders.orders</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT customerNumber, orderNumber FROM customers, orderdetails
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.orders = customers.orders</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT customerNumber, orderNumber FROM customers, orderdetails
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.orders = orderNumber.orders</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.order = orderNumber.order</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+	INNER JOIN orderNumber ON orderNumber.order = orderNumber.orderDetails</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+		INNER JOIN orderNumber ON orderNumber.orderdetails = orderNumber.orderDetails</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+		INNER JOIN orderNumber on orderNumber.orderdetails = orderNumber.orderDetails</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+		INNER JOIN orderNumber on orderNumber.customerNumber = orderNumber.customerNumber</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+		INNER JOIN orderNumber on orders.customerNumber = orderNumber.customerNumber</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+-- SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'
+
+SELECT * FROM customers
+	INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+-- 		INNER JOIN orderNumber on orders.</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+SELECT ROUND(SUM(amount),2) AS total FROM payments WHERE customerNumber = '124'</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+SELECT SUM(amount) AS total FROM payments WHERE customerNumber = '124'</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+-- SELECT * FROM  payments WHERE amount &gt; '1000'
+
+SELECT SUM(amounts) AS total FROM payments WHERE customerNumber = '124'</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+SELECT * FROM  payments WHERE amount &gt; '1000'</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+SELECT * FROM  payments AND amount &gt; '1000'</string>
+		<string>/* CREATE TABLE students(
+	name varchar(255),
+	website varchar(255),
+	github_username varchar(255),
+	points integer,
+	gender varchar(1),
+	cohort_start_date date,
+	graduated boolean
+)*/
+
+-- INSERT INTO students values
+-- 	('Paige', 'paigeniedringhaus.com', 'paigen11', '11', 'f', '2016-07-11', FALSE)
+
+-- INSERT INTO students values
+-- 	('Sean', 'seanlaughlin.com', 'trinisean', '76', 'm', '2016-07-11', FALSE)
+
+-- SELECT * FROM students
+
+-- SELECT name FROM students
+
+-- SELECT name, gender from students	
+
+-- SELECT grade FROM students	
+
+-- ALTER TABLE students ADD id int NOT NULL UNIQUE PRIMARY KEY auto_increment
+
+/* INSERT INTO students values
+	('', '', '', DEFAULT, '', DEFAULT, DEFAULT, DEFAULT);
+	
+	select * from students */
+	
+-- SELECT * FROM customers WHERE customerNumber &lt; 200
+
+-- SELECT * FROM customers WHERE contactLastName = 'King'
+
+-- SELECT customerNumber, state FROM customers WHERE contactLastName = 'King'
+
+-- SELECT * FROM customers 
+-- 		WHERE state = 'NY'	AND customerNumber &lt; 200 
+-- 		AND customerName = "Land of Toys Inc."
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%'
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName ASC
+
+-- SELECT * FROM customers 
+-- 		WHERE customerName LIKE '%and%' 
+-- 		ORDER BY contactFirstName DESC
+
+-- SELECT DISTINCT(lastname) from employees
+
+-- SELECT DISTINCT state, city from customers
+
+-- SELECT * FROM customers WHERE customerNumber &lt; 200 limit 10
+
+-- SELECT * FROM customers WHERE state IN ('CA', 'NY', 'NC')
+-- SELECT * FROM customers WHERE state = 'CA' OR state = 'NY'
+
+/* SELECT * FROM products 
+	INNER JOIN productlines ON products.productline = productlines.productline */
+	
+/* SELECT t2.comments, t1.quantityOrdered, t1.priceEach, t2.status FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+/* SELECT t1.orderNumber, t2.status, ROUND((quantityOrdered * priceEach),2) AS total FROM orderdetails AS t1
+	INNER JOIN orders AS t2 ON t1.orderNumber = t2.orderNumber
+	WHERE status = 'shipped'AND t1.quantityOrdered &gt; 50 AND t2.comments IS NOT NULL */
+	
+-- SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+-- SELECT lastName, firstName, email FROM employees WHERE jobTitle != 'Sales Rep' AND officeCode = '1'
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%')
+
+-- SELECT firstName, lastName, officeCode FROM employees WHERE jobTitle LIKE '%manager%' AND (lastName LIKE '%b%') AND (officeCode IN ('1','3','5'))
+
+-- SELECT customerName FROM customers LIMIT 10
+
+SELECT * FROM  payments AND amount &gt; 1000</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.15</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
