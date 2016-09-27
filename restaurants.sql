@@ -49,3 +49,12 @@ review LONGTEXT,
 restaurant_id INT(11) REFERENCES restaurant(id),
 PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE IF NOT EXISTS comments(
+id INT(11) NOT NULL AUTO_INCREMENT,
+u_id INT(11) NOT NULL REFERENCES reviews(id),
+a_id INT(11) NOT NULL REFERENCES users(id),
+comment LONGTEXT NOT NULL
+);

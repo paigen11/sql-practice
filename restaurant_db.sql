@@ -1,5 +1,7 @@
-CREATE TABLE restaurants
+DROP TABLE IF EXISTS restaurants;
+CREATE TABLE IF NOT EXISTS restaurants
 (
+id INT(11 )
 name VARCHAR(60),
 distance INT(4),
 stars INT(1),
